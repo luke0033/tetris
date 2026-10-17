@@ -1,0 +1,7 @@
+# Browser checks create local screenshots and temporary files.
+tools/screenshots/
+.publish-local/
+node_modules/
+*.log
+.DS_Store
+Thumbs.db

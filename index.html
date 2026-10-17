@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#f3f0e6">
+  <title>方块俱乐部 · BLOCK CLUB</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <a class="brand" href="./index.html" aria-label="方块俱乐部首页"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span>BLOCK CLUB<small>方块俱乐部</small></span></a>
+  <div class="header-center">INSERT A LITTLE JOY INTO YOUR DAY.</div>
+  <span class="online"><i></i> 单人街机 · 随时开局</span>
+</header>
+<main>
+  <section class="intro"><div><div class="eyebrow">NO. 001 / THE ORIGINAL CLASSIC</div><h1>快乐，<span>一块一块来。</span><svg aria-hidden="true" viewBox="0 0 50 44"><path d="M1 17h16V1h16v16h16v16H1Z"/></svg></h1></div><div class="intro-tools"><button id="help-button" class="help-button" aria-haspopup="dialog" aria-controls="help-dialog"><span aria-hidden="true">?</span> 玩法说明 / 按键查看</button></div></section>
+  <div class="arcade-layout">
+    <aside class="left-rail">
+      <div class="ticket"><div class="ticket-top"><span>CLASSIC MODE</span><span>01</span></div><h2>经典无尽</h2><p>落下、旋转、消除。<br>找到你的节奏。</p><div class="ticket-bottom"><span class="pixel-star">✦</span><span>ONE MORE ROUND.</span></div></div>
+      <p class="small-note">留点时间，给纯粹的好玩。<br>好位置，值得慢慢找。</p>
+    </aside>
+    <section class="machine" aria-label="俄罗斯方块游戏">
+      <div class="machine-top"><span><i></i> <b id="machine-status">READY PLAYER ONE</b></span><span>10 × 20</span></div>
+      <div class="board-wrap">
+        <canvas id="board" width="300" height="600" aria-label="10 列 20 行的俄罗斯方块棋盘"></canvas>
+        <div class="overlay" id="overlay"><div class="overlay-inner"><span class="mini-block" aria-hidden="true">▟</span><span class="overlay-tag" id="overlay-tag">LET'S PLAY</span><h2 id="overlay-title">准备好了吗？</h2><p id="overlay-description">下一块快乐，正在等你。</p><button id="start-button" class="primary">开始游戏 <span>↗</span></button><span class="overlay-hint" id="overlay-hint">点击开始 / 按 Enter 键</span></div></div>
+      </div>
+      <div class="machine-bottom"><span>▰ ▰ ▰</span><span>LESS SCROLL. MORE PLAY.</span><span>●</span></div>
+    </section>
+    <aside class="right-rail">
+      <section class="score-card"><div class="card-label">SCORE <span>当前得分</span></div><output id="score" class="score">000000</output><div class="best"><span>个人最佳</span><span>♛ <b id="best">000000</b></span></div></section>
+      <section class="stats"><div><span>LEVEL <small>等级</small></span><output id="level">01</output></div><div><span>LINES <small>消除行数</small></span><output id="lines">00</output></div></section>
+      <section class="next-card"><div class="card-label">UP NEXT <span>下一块</span></div><canvas id="next" width="180" height="90" aria-label="下一块预览"></canvas><div class="next-caption">每一块，都有好位置。</div></section>
+      <div class="game-actions"><button id="pause-button" class="pause-button" disabled><span id="pause-icon">Ⅱ</span><span id="pause-text">暂停一下</span><kbd>P</kbd></button><button id="restart-button" class="restart-button" disabled>↻ 重新开始</button></div>
+      <div class="level-progress"><div><span>下一级进度</span><span id="progress-text">0 / 10</span></div><div class="progress-track"><div id="progress-fill"></div></div></div>
+      <div class="postcard"><span>小小的人生建议</span><p>堆积的烦恼，<br>总会有消除的办法。</p><b>KEEP GOING. ↗</b></div>
+    </aside>
+  </div>
+  <section class="touch-panel" aria-label="手机游戏操作"><div class="touch-heading">TOUCH TO PLAY <span>长按移动 / 点击旋转</span></div><div class="touch-buttons"><button data-control="left" aria-label="向左移动">◀</button><button data-control="rotate" aria-label="顺时针旋转">↻</button><button data-control="right" aria-label="向右移动">▶</button><button data-control="down" aria-label="加速下落">▼</button><button data-control="drop" class="drop" aria-label="直接落底">⤓ <span>落底</span></button></div></section>
+  <div id="announcement" class="sr-only" role="status" aria-live="polite"></div>
+  <footer><span>没有通关的终点，只有更好的下一局。</span><span>BUILT FOR THE LOVE OF PLAY. &nbsp; © 2026 BLOCK CLUB</span></footer>
+</main>
+<dialog id="help-dialog" aria-labelledby="help-title" aria-describedby="help-subtitle">
+  <div class="help-top"><span>THE PLAYER'S HANDBOOK</span><button id="help-close" class="help-close" aria-label="关闭玩法说明" autofocus>×</button></div>
+  <h2 id="help-title">一块上手。</h2><p id="help-subtitle">填满一行就能消除，别让方块堆到顶端。</p>
+  <section class="instructions"><h3>KEYBOARD <span>电脑按键</span></h3><dl><div><dt><kbd>←</kbd><kbd>→</kbd></dt><dd>左右移动，可长按</dd></div><div><dt><kbd>↑</kbd> / <kbd>X</kbd></dt><dd>顺时针旋转</dd></div><div><dt><kbd>Z</kbd></dt><dd>逆时针旋转</dd></div><div><dt><kbd>↓</kbd></dt><dd>加速下落，可长按</dd></div><div><dt><kbd class="wide">SPACE</kbd></dt><dd>直接落底</dd></div><div><dt><kbd>P</kbd> / <kbd>Esc</kbd></dt><dd>暂停 / 继续</dd></div><div><dt><kbd>Enter</kbd></dt><dd>开始 / 继续游戏</dd></div></dl></section>
+  <div class="help-rules"><h3>TOUCH & SCORE <span>手机操作与计分</span></h3><p>手机使用棋盘下方按钮，长按左右移动或加速下落，点击 ↻ 旋转、⤓ 直接落底。虚线方块表示最终落点。</p><p>一次消除 1 / 2 / 3 / 4 行，分别获得 100 / 300 / 500 / 800 × 当前等级分。每消除 10 行升级。软降每格 1 分，直接落底每格 2 分。</p></div>
+  <p class="help-foot">查看说明时自动暂停 · 按 Esc 或点击空白处关闭</p>
+</dialog>
+<script src="motion.js"></script>
+<script src="engine.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
