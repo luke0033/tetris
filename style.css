@@ -36,3 +36,22 @@ main{max-width:none;width:100%;height:100dvh;min-height:0;margin:0;padding:12px 
   .score-card{grid-column:1;padding:10px 9px}.stats{grid-column:2;padding:9px 0}.score{font-size:24px;margin:9px 0}.stats output{font-size:20px}.next-card{grid-column:1;padding:9px}.next-card #next{height:52px}.game-actions{grid-column:2;display:flex;flex-direction:column;gap:6px}.pause-button{height:34px;font-size:9px}.restart-button{height:29px;font-size:8px}.level-progress{grid-column:1/-1}.touch-panel{display:block;width:min(100%,460px);margin:10px auto 0}.touch-heading{display:none}.touch-buttons{margin-top:0}
 }
 @media(max-width:370px){.score{font-size:21px}.stats output{font-size:18px}.next-card #next{height:45px}.touch-buttons{gap:5px}.touch-buttons button{height:47px}}
+
+/* Portrait phone layout: board and compact status rail share the first viewport. */
+@media(max-width:760px){
+  main{padding-top:7px}
+  .intro{height:29px;margin-bottom:7px}
+  .arcade-layout{display:grid;grid-template-columns:minmax(0,1fr) clamp(92px,26vw,118px);grid-template-rows:auto;align-items:start;gap:8px;width:100%;margin:0}
+  .machine{grid-column:1;grid-row:1;width:100%!important;min-width:0;margin:0;padding:0 5px;align-self:start}
+  .machine-top{height:18px}.machine-top>span:first-child{font-size:5px}
+  .right-rail{grid-column:2;grid-row:1;width:100%;max-width:none;display:flex;flex-direction:column;gap:7px;margin:0;align-self:start}
+  .score-card{padding:8px 7px 7px}.card-label{font-size:7px}.card-label span{font-size:6px}.score{font-size:clamp(18px,6vw,25px);letter-spacing:0;margin:7px 0 8px}.best{font-size:6px;gap:3px;padding-top:7px}.best b{font-size:7px}
+  .stats{padding:8px 0}.stats>div{padding:0 6px}.stats span{font-size:6px}.stats output{font-size:clamp(17px,5vw,22px);margin-top:4px}
+  .next-card{padding:7px 6px 5px}.next-card .card-label{font-size:7px}#next{height:clamp(42px,14vw,60px)}
+  .game-actions{gap:5px}.pause-button{height:31px;font-size:8px;gap:5px}.pause-button kbd{display:none}.restart-button{height:27px;font-size:7px;letter-spacing:0}
+  .level-progress{padding-top:1px}.level-progress>div:first-child{font-size:6px}.progress-track{height:3px;margin-top:5px}
+  .touch-panel{grid-column:1/-1;width:100%;margin:8px 0 0}.touch-buttons{margin-top:0;gap:7px}.touch-buttons button{height:clamp(43px,12vw,54px);font-size:clamp(17px,5vw,23px)}.touch-buttons .drop{font-size:clamp(20px,6vw,27px)}
+}
+@media(max-width:370px){
+  .arcade-layout{grid-template-columns:minmax(0,1fr) 89px;gap:6px}.machine{padding:0 4px}.right-rail{gap:5px}.score-card{padding:7px 6px}.score{font-size:18px}.stats{padding:7px 0}.stats>div{padding:0 5px}.next-card{padding:6px 5px}.game-actions{gap:4px}.pause-button{height:28px;font-size:7px}.restart-button{height:25px}.touch-buttons{gap:5px}.touch-buttons button{height:43px;font-size:17px}
+}
